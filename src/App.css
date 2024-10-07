@@ -1,0 +1,71 @@
+.App {
+  text-align: center;
+  font-size: 14px;
+}
+
+input[type="date"]:in-range::-webkit-datetime-edit-year-field,
+input[type="date"]:in-range::-webkit-datetime-edit-month-field,
+input[type="date"]:in-range::-webkit-datetime-edit-day-field,
+input[type="date"]:in-range::-webkit-datetime-edit-text {
+  color: transparent;
+}
+
+.main-form {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 30px;
+}
+
+.main-form-label {
+  display: block;
+  text-align: left;
+  margin-bottom: 10px;
+  
+}
+
+input {
+  padding: 10px;
+  width: 200px;
+}
+
+button {
+  padding: 10px 20px;
+}
+
+.scoreboard-header {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 700px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 5px;
+  padding: 10px 0;
+}
+
+.scoreboard-date {
+  grid-column: 1;
+}
+
+.scoreboard-distance {
+  grid-column: 2;
+}
+
+.scoreboard-actions {
+  grid-column: 3;
+}
+
+.scoreboard-content {
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 700px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 5px;
+  padding: 10px 0;
+}
+
