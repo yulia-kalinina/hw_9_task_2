@@ -1,7 +1,9 @@
+import EditPng from "./../img/edit.png";
+import CancelPng from "./../img/cancel.png";
+
 export default function Scoreboard({ data }) {
-  console.log(data);
-  const allItems = [];
-  allItems.push(data);
+
+   console.log(data);
 
   return (
     <>
@@ -11,8 +13,28 @@ export default function Scoreboard({ data }) {
         <span className="scoreboard-actions">Действия</span>
       </div>
       <div className="scoreboard-content">
-        <span>{data.date}</span>
-        <span>{data.distance}</span>
+        {data.map((item) => {
+          return (
+            <>
+              <span>{item.date}</span>
+              <span>{item.distance}</span>
+              <div>
+                <input
+                  type="image"
+                  src={EditPng}
+                  style={{ width: 16 }}
+                  alt="Изменить"
+                />
+                <input
+                  type="image"
+                  src={CancelPng}
+                  style={{ width: 16 }}
+                  alt="Удалить"
+                />
+              </div>
+            </>
+          );
+        })}
       </div>
     </>
   );
