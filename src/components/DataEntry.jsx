@@ -1,5 +1,5 @@
-export default function DataEntry({ onChange, onSubmit, form }) {
-    
+export default function DataEntry({onChange, onSubmit, form}) {
+
   return (
     <>
       <form onSubmit={onSubmit} className="main-form">

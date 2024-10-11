@@ -1,19 +1,17 @@
 import EditPng from "./../img/edit.png";
 import CancelPng from "./../img/cancel.png";
 
-export default function Scoreboard({ data }) {
-
-   console.log(data);
+export default function Scoreboard({data}) {
 
   return (
-    <>
+    <div className="scoreboard">
       <div className="scoreboard-header">
         <span className="scoreboard-date">Дата(ДД.ММ.ГГ)</span>
         <span className="scoreboard-distance">Пройдено км</span>
         <span className="scoreboard-actions">Действия</span>
       </div>
       <div className="scoreboard-content">
-        {data.map((item) => {
+       {data.map((item) => { 
           return (
             <>
               <span>{item.date}</span>
@@ -36,6 +34,6 @@ export default function Scoreboard({ data }) {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }

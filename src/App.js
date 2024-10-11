@@ -9,7 +9,7 @@ function App() {
     distance: "",
   });
 
-  const [inputs, setInput] = useState([]);
+  const [input, setInput] = useState({});
 
   const handleChangeForm = ({ target }) => {
     const { name, value } = target;
@@ -19,18 +19,20 @@ function App() {
   const handleSubmit = (evt) => {
     evt.preventDefault();
 
-    const newInput = {
+    setInput((prevInput) => ({
+      ...prevInput,
       date: form.date,
       distance: form.distance,
-    };
-
-    setInput((prevInputs) => ({ ...prevInputs, newInput }));
+    }));
 
     setForm({
       date: "",
       distance: "",
     });
   };
+
+  const arrOfInputs = [];
+  arrOfInputs.push(input);
 
   return (
     <div className="App">
@@ -39,7 +41,7 @@ function App() {
         onSubmit={handleSubmit}
         form={form}
       />
-      <Scoreboard data={inputs} />
+      <Scoreboard data={arrOfInputs} />
     </div>
   );
 }
