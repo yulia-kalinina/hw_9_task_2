@@ -1,5 +1,4 @@
 
-
 .App {
   text-align: center;
   font-size: 14px;
@@ -17,7 +16,7 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 30px;
+  gap: 40px;
 }
 
 .main-form-label {
@@ -29,45 +28,28 @@ input[type="date"]:in-range::-webkit-datetime-edit-text {
 
 input {
   padding: 10px;
-  width: 200px;
+  width: 250px;
 }
 
 button {
   padding: 10px 20px;
 }
 
-.scoreboard-header {
+.scoreboard-table {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30px;
+  margin-top: 40px;
   width: 700px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  row-gap: 5px;
-  padding: 10px 0;
+  border: 1px solid grey
 }
 
-.scoreboard-date {
-  grid-column: 1;
+th, tr {
+  padding: 10px 20px;
+  text-align: center;
 }
 
-.scoreboard-distance {
-  grid-column: 2;
+th {
+  font-weight: normal;
 }
 
-.scoreboard-actions {
-  grid-column: 3;
-}
-
-.scoreboard-content {
-  border: 1px solid black;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  width: 700px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  row-gap: 5px;
-  padding: 10px 0;
-}
 

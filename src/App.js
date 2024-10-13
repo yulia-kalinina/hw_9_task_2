@@ -9,21 +9,36 @@ function App() {
     distance: "",
   });
 
-  const [input, setInput] = useState({});
+  const [inputs, setInput] = useState([]);
+
+  inputs.sort((a, b) => {
+    if (a.date < b.date) {
+      return -1;
+    }
+    if (a.date > b.date) {
+      return 1;
+    }
+    return 0;
+  });
 
   const handleChangeForm = ({ target }) => {
     const { name, value } = target;
     setForm((prevForm) => ({ ...prevForm, [name]: value }));
   };
 
-  const handleSubmit = (evt) => {
+  let handleSubmit = (evt) => {
     evt.preventDefault();
 
-    setInput((prevInput) => ({
-      ...prevInput,
-      date: form.date,
-      distance: form.distance,
-    }));
+    const findInput = inputs.find((el) => el.date === form.date);
+    if (findInput !== undefined) {
+      findInput.distance = +findInput.distance + +form.distance;
+    } else {
+      const newInput = {
+        date: form.date,
+        distance: form.distance,
+      };
+      setInput((prevInput) => [...prevInput, newInput]);
+    }
 
     setForm({
       date: "",
@@ -31,8 +46,9 @@ function App() {
     });
   };
 
-  const arrOfInputs = [];
-  arrOfInputs.push(input);
+  const handleDeleteItem = (item) => {
+    setInput((prevInput) => inputs.filter((elem) => elem.date !== item.date));
+  };
 
   return (
     <div className="App">
@@ -41,7 +57,10 @@ function App() {
         onSubmit={handleSubmit}
         form={form}
       />
-      <Scoreboard data={arrOfInputs} />
+      <Scoreboard
+        onDeletedItem={handleDeleteItem}
+        data={inputs}
+      />
     </div>
   );
 }

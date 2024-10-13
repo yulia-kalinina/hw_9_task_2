@@ -4,7 +4,7 @@ export default function DataEntry({onChange, onSubmit, form}) {
     <>
       <form onSubmit={onSubmit} className="main-form">
         <div>
-          <label htmlFor="data" className="main-form-label">
+          <label htmlFor="date" className="main-form-label">
             Дата(ДД.ММ.ГГ)
           </label>
           <input
